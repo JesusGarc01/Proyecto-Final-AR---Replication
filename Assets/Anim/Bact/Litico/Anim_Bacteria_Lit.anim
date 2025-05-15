@@ -26397,22 +26397,29 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 7.2083335
+  - time: 6.5833335
     functionName: Ralentizar
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 8.333333
-    functionName: ByeSkin_Fago
+  - time: 7.625
+    functionName: Integracion
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 22.416666
-    functionName: ByeSkin_Bact
+  - time: 19.25
+    functionName: Replicacion
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 22.125
+    functionName: StopAnim
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

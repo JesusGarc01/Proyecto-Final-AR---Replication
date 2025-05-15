@@ -31,9 +31,9 @@ public class Markers : MonoBehaviour
     public GameObject gmOb_Anim;    //General
 
     //Variables para guardar modelos de cada marcador (de Objects[])
-    private GameObject cub1;
-    private GameObject cub2;
-    private GameObject cub3;
+    private GameObject fago;
+    private GameObject bact;
+    private GameObject antib;
 
     //Script UI_AR
     public UI_AR script_UI_AR;
@@ -54,6 +54,7 @@ public class Markers : MonoBehaviour
 
     public Litic_Anim script_Litic;
     public Lisog_Anim script_Lisog;
+    public Antib_Anim script_Antib;
     //public Antib_Anim script_Antib;
 
     private void Start()
@@ -64,9 +65,9 @@ public class Markers : MonoBehaviour
         //gmOb_mad = gmOb_Anim.transform.GetChild(0).gameObject;  //Obteniendo objetos para controlar las animaciones
         //gmOb_jumper = gmOb_Anim.transform.GetChild(1).gameObject;
 
-        cub1 = Objects[0];
-        cub2 = Objects[1];
-        cub3 = Objects[2];
+        fago = Objects[0];
+        bact = Objects[1];
+        antib = Objects[2];
 
     }
     private void Update()
@@ -100,6 +101,7 @@ public class Markers : MonoBehaviour
         Debug.Log("Menu Element: " + mnuElm);
         switch (mnuElm)
         {
+
             case 1:
                 gmOb_Anim = Anim[0];
                 break;
@@ -134,15 +136,16 @@ public class Markers : MonoBehaviour
                 script_Lisog.FinishAnim();
                 break;
             case 5:
+                script_Antib.FinishAnim();
                 break;
             default:
                 break;
         }
         
 
-        cub1.SetActive(true);           //Activa Modelos Simples
-        cub2.SetActive(true);
-        cub3.SetActive(true);
+        fago.SetActive(true);           //Activa Modelos Simples
+        bact.SetActive(true);
+        antib.SetActive(true);
 
         foreach(ObserverBehaviour target in Targets) { 
             target.enabled = true;
@@ -163,7 +166,7 @@ public class Markers : MonoBehaviour
 
         while (true)
         {
-            Debug.Log("mnuElem: " + mnuElm);
+            //Debug.Log("mnuElem: " + mnuElm);
             switch (mnuElm)
             {
                 case 0:     //Fago Simple
@@ -183,19 +186,19 @@ public class Markers : MonoBehaviour
                         Targets[2].enabled = false;
                         gmOb_Anim.SetActive(true);
                         //gmOb_sphere.SetActive(true);
-                        cub1.SetActive(false);
-                        cub2.SetActive(false);
+                        fago.SetActive(false);
+                        bact.SetActive(false);
 
                         script_Litic.Shown();   //Con
 
-                        if (!script_Litic.BTN_pressed)
-                        {
-                            BTNs[0].SetActive(true);
-                        }
-                        else
-                        {
-                            BTNs[0].SetActive(false);
-                        }
+                        //if (!script_Litic.BTN_pressed)
+                        //{
+                        //    BTNs[0].SetActive(true);
+                        //}
+                        //else
+                        //{
+                        //    BTNs[0].SetActive(false);
+                        //}
 
                         midpoint = ((Targets[0].transform.position + Targets[1].transform.position) / 2f) - new Vector3(0, 0, 1); //Vector3(0,0,1)
 
@@ -208,9 +211,9 @@ public class Markers : MonoBehaviour
                     {
                         //gmOb_Anim.SetActive(false);
                         //gmOb_sphere.SetActive(false);
-                        cub1.SetActive(true);
-                        cub2.SetActive(true);
-                        cub3.SetActive(true);
+                        fago.SetActive(true);
+                        bact.SetActive(true);
+                        antib.SetActive(true);
 
                         script_Litic.NotShown();
 
@@ -229,19 +232,19 @@ public class Markers : MonoBehaviour
                         Targets[2].enabled = false;
                         gmOb_Anim.SetActive(true);
                         //gmOb_sphere.SetActive(true);
-                        cub1.SetActive(false);
-                        cub2.SetActive(false);
+                        fago.SetActive(false);
+                        bact.SetActive(false);
 
                         script_Lisog.Shown();
 
-                        if (!script_Lisog.BTN_pressed)
-                        {
-                            BTNs[1].SetActive(true);
-                        }
-                        else
-                        {
-                            BTNs[1].SetActive(false);
-                        }
+                        //if (!script_Lisog.BTN_pressed)
+                        //{
+                        //    BTNs[1].SetActive(true);
+                        //}
+                        //else
+                        //{
+                        //    BTNs[1].SetActive(false);
+                        //}
 
                         //mad.SetBool("Mad", true);
                         //jumper.SetBool("Jump", true);
@@ -253,11 +256,11 @@ public class Markers : MonoBehaviour
                     }
                     else                        //Se desactiva la animacion
                     {
-                        gmOb_Anim.SetActive(false);
+                        //gmOb_Anim.SetActive(false);
                         //gmOb_sphere.SetActive(false);
-                        cub1.SetActive(true);
-                        cub2.SetActive(true);
-                        cub3.SetActive(true);
+                        fago.SetActive(true);
+                        bact.SetActive(true);
+                        antib.SetActive(true);
 
                         script_Lisog.NotShown();
 
@@ -292,14 +295,20 @@ public class Markers : MonoBehaviour
                         Targets[0].enabled = false;
                         gmOb_Anim.SetActive(true);
                         //gmOb_sphere.SetActive(true);
-                        cub2.SetActive(false);
-                        cub3.SetActive(false);
+                        bact.SetActive(false);
+                        antib.SetActive(false);
 
-                        activeAnim = true;
-
-                        //mad.SetBool("Mad", true);
-                        //jumper.SetBool("Jump", true);
-
+                        script_Antib.Shown();
+                        
+                        //if (!script_Antib.BTN_pressed)
+                        //{
+                        //    BTNs[2].SetActive(true);
+                        //}
+                        //else
+                        //{
+                        //    BTNs[2].SetActive(false);
+                        //}
+                        
                         midpoint = ((Targets[2].transform.position + Targets[1].transform.position) / 2f) - new Vector3(0, 0, 1);
 
                         gmOb_Anim.transform.position = midpoint;
@@ -308,18 +317,15 @@ public class Markers : MonoBehaviour
                     }
                     else                        //Se desactiva la animacion
                     {
-                        gmOb_Anim.SetActive(false);
+                        //gmOb_Anim.SetActive(false);
                         //gmOb_sphere.SetActive(false);
-                        cub1.SetActive(true);
-                        cub2.SetActive(true);
-                        cub3.SetActive(true);
+                        fago.SetActive(true);
+                        bact.SetActive(true);
+                        antib.SetActive(true);
 
-                        activeAnim = false;
+                        script_Antib.NotShown();
 
                         BTNs[2].SetActive(false);
-
-                        //mad.SetBool("Mad", false);
-                        //jumper.SetBool("Jump", false);
 
                         midpoint = new Vector3(0, 0, 0);
                         Debug.Log("Anim antib inactiva");
@@ -329,9 +335,9 @@ public class Markers : MonoBehaviour
                 default:        //Ninguno de los anteriores
                     gmOb_Anim.SetActive(false);
                     //gmOb_sphere.SetActive(false);
-                    cub1.SetActive(true);
-                    cub2.SetActive(true);
-                    cub3.SetActive(true);
+                    fago.SetActive(true);
+                    bact.SetActive(true);
+                    antib.SetActive(true);
 
                     activeAnim = false;
                     midpoint = new Vector3(0, 0, 0);

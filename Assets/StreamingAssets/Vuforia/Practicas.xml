@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
-    <ImageTarget name="capsula_j" size="1.000000 1.045356" />
+    <ImageTarget name="capsula_j" size="1.000000 1.010381" />
     <ImageTarget name="target_bact" size="1.000000 0.949451" />
     <ImageTarget name="target_fago" size="1.000000 0.994881" />
     <ImageTarget name="symbol4" size="1.000000 1.000000" />

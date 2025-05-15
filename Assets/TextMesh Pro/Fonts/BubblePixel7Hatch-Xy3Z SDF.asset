@@ -148,11 +148,11 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 0.7201741, g: 0.65108335, b: 0.65108335, a: 1}
-    - _GlowColor: {r: 0, g: 0.6714079, b: 0.032313764, a: 1}
+    - _GlowColor: {r: 0, g: 0.8595065, b: 0.04092893, a: 1}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReflectFaceColor: {r: 0.61567485, g: 0.61567485, b: 0.61567485, a: 1}
-    - _ReflectOutlineColor: {r: 0.000076532364, g: 1, b: 0, a: 1}
+    - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnderlayColor: {r: 0.23526847, g: 1, b: 0.26216853, a: 0.5}
   m_BuildTextureStacks: []
