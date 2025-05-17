@@ -204,6 +204,12 @@ public class Lisog_Anim : MonoBehaviour
         skin_fago.SetActive(true);
         skin_bact_2.SetActive(false);
 
+
+        if (cor_text != null)
+        {
+            StopCoroutine(cor_text);
+        }
+
         advice.text = "Lisogenico";
         Particulas.SetActive(false);
 
@@ -220,6 +226,8 @@ public class Lisog_Anim : MonoBehaviour
         anim_bact_2.speed = 1;
         //gmObj_BTN_Continue.SetActive(false);
         //gmObj_Aviso.SetActive(false);
+
+        
     }
 
     public void StartParts()

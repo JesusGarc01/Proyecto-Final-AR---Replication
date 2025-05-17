@@ -29,5 +29,8 @@ public class Anim_Antib : MonoBehaviour
         script_Antib.muerte();
     }
 
-
+    public void StartParticles()
+    {
+        script_Antib.StartParticleAntib();
+    }
 }

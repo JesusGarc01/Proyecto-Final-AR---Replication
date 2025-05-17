@@ -19,6 +19,8 @@ public class Antib_Anim : MonoBehaviour
 
     public GameObject BTN_Play;
 
+    public GameObject ptcl_Bact, ptcl_Antib;
+
     //public GameObject gmObj_Aviso;
     //public GameObject gmObj_BTN_Continue;
 
@@ -54,6 +56,9 @@ public class Antib_Anim : MonoBehaviour
         skin_antib_part.SetActive(false);
         skin_bact.SetActive(false);
         skin_bact_2.SetActive(false);
+
+        ptcl_Antib.SetActive(false);
+        ptcl_Bact.SetActive(false);
     }
     private void Update()
     {
@@ -126,6 +131,14 @@ public class Antib_Anim : MonoBehaviour
         skin_bact.SetActive(false);
         skin_bact_2.SetActive(false);
 
+        ptcl_Antib.SetActive(false);
+        ptcl_Bact.SetActive(false);
+
+        if (cor_text != null)
+        {
+            StopCoroutine(cor_text);
+        }
+
         advice.text = "Mecanismo de accion";
 
         isSlowingDown = false;
@@ -159,6 +172,8 @@ public class Antib_Anim : MonoBehaviour
         anim_bact_2.SetBool("Start", true);
         anim_antib_part.SetBool("Start", true);
 
+        ptcl_Antib.SetActive(false);
+
         string txt = "Union";
         StartCor(txt);
     }
@@ -180,6 +195,7 @@ public class Antib_Anim : MonoBehaviour
     public void muerte()
     {
         skin_bact.SetActive(false);
+        ptcl_Bact.SetActive(true);
         string txt = "Muerte";
         StartCor(txt);
     }
@@ -214,6 +230,12 @@ public class Antib_Anim : MonoBehaviour
 
         Debug.Log("texto: " + nwT);
 
+    }
+
+
+    public void StartParticleAntib()
+    {
+        ptcl_Antib.SetActive(true);
     }
 
     public void NotShown()

@@ -8,10 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Markers : MonoBehaviour
 {
-    //TODO: Mejorar sistema de animaciones
-          //Desactivar solo modelos de animaciones dependiendo el caso si no se muestran los dos marcadores, *no desactivar gmOb_Anim*
-          //    Agregar funcion para desactivar los modelos en scripts de animaciones
-
+    
     //Lista de marcadores
     public ObserverBehaviour[] Targets;
 
@@ -200,10 +197,10 @@ public class Markers : MonoBehaviour
                         //    BTNs[0].SetActive(false);
                         //}
 
-                        midpoint = ((Targets[0].transform.position + Targets[1].transform.position) / 2f) - new Vector3(0, 0, 1); //Vector3(0,0,1)
+                        midpoint = ((Targets[0].transform.position + Targets[1].transform.position) / 2f) + new Vector3(0, 0.7f, 0); //Vector3(0,0,1)
 
                         gmOb_Anim.transform.position = midpoint;
-                        Info_AR[0].transform.position = midpoint;
+                        //Info_AR[0].transform.position = midpoint;
                         Debug.Log("Anim Fago activa");
 
                     }
@@ -249,7 +246,7 @@ public class Markers : MonoBehaviour
                         //mad.SetBool("Mad", true);
                         //jumper.SetBool("Jump", true);
 
-                        midpoint = ((Targets[0].transform.position + Targets[1].transform.position) / 2f) - new Vector3(0, 0, 1);
+                        midpoint = ((Targets[0].transform.position + Targets[1].transform.position) / 2f) + new Vector3(0, 0.7f, 0);
 
                         gmOb_Anim.transform.position = midpoint;
 
@@ -309,7 +306,7 @@ public class Markers : MonoBehaviour
                         //    BTNs[2].SetActive(false);
                         //}
                         
-                        midpoint = ((Targets[2].transform.position + Targets[1].transform.position) / 2f) - new Vector3(0, 0, 1);
+                        midpoint = ((Targets[2].transform.position + Targets[1].transform.position) / 2f) + new Vector3(0, 0.7f, 0);
 
                         gmOb_Anim.transform.position = midpoint;
                         Debug.Log("Anim antib activa");

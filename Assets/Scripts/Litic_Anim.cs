@@ -147,6 +147,11 @@ public class Litic_Anim : MonoBehaviour
         skin_bact.SetActive(true);
         skin_fago.SetActive(true);
 
+        if (cor_text != null)
+        {
+            StopCoroutine(cor_text);
+        }
+        
         advice.text = "Litico";
 
         isSlowingDown = false;
